@@ -135,7 +135,6 @@ public class TasksTest {
         Assertions.assertEquals(meeting1.hashCode(), meeting2.hashCode());
     }
 
-
     @Test
     public void shouldMeetingMatchQueryInBothTopicAndProject() {
         Meeting meeting = new Meeting(1, "Важная встреча", "Важный проект", "10:00");
@@ -145,7 +144,6 @@ public class TasksTest {
     @Test
     public void shouldMeetingNotMatchWhenQueryInStartOnly() {
         Meeting meeting = new Meeting(1, "Встреча", "Проект", "10:00");
-        // query есть только в start, но не в topic или project
         Assertions.assertFalse(meeting.matches("10:00"));
     }
 
